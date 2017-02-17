@@ -1,24 +1,18 @@
-# == Define: multipathd::multipath
-#
 # Set up the multipath.conf defaults per the 'defaults section' of
 # multipath.conf(5)
 #
-# == Parameters
-#
-# [*name*]
+# @param name
 #   $alias will be set to $name!
 #
-# [*wwid*]
-# [*path_grouping_policy*]
-# [*path_selector*]
-# [*failback*]
-# [*rr_min_io*]
-# [*fstype*]
-# [*fsoptions*]
+# @param wwid
+# @param path_grouping_policy
+# @param path_selector
+# @param failback
+# @param rr_min_io
+# @param fstype
+# @param fsoptions
 #
-# == Authors
-#
-# * Trevor Vaughan <tvaughan@onyxpoint.com>
+# @author Trevor Vaughan <tvaughan@onyxpoint.com>
 #
 define multipathd::multipath (
   $wwid,

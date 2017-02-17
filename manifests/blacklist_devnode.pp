@@ -1,16 +1,10 @@
-# == Define: multipathd::blacklist_devnode
-#
 # Blacklist a devnode per the 'blacklist section' of multipath.conf(5)
 #
 # Put your pattern in single (') quotes.
 #
-# == Parameters
+# @param pattern
 #
-# [*pattern*]
-#
-# == Authors
-#
-# * Trevor Vaughan <tvaughan@onyxpoint.com>
+# @author Trevor Vaughan <tvaughan@onyxpoint.com>
 #
 define multipathd::blacklist_devnode (
   $pattern

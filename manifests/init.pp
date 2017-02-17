@@ -1,10 +1,6 @@
-# == Class: multipathd
-#
 # This class sets up multipathd and will compile any built configurations.
 #
-# == Authors
-#
-# * Trevor Vaughan <tvaughan@onyxpoint.com>
+# @author Trevor Vaughan <tvaughan@onyxpoint.com>
 #
 class multipathd {
   concat_build { 'multipath_conf':

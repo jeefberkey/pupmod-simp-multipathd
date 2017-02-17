@@ -1,19 +1,13 @@
-# == Define: multipathd::blacklist_wwid
-#
 # Blacklist a wwid per the 'blacklist section' of multipath.conf(5)
 #
-# == Parameters
-#
-# [*name*]
+# @param name
 #   The wwid you wish to blacklist
-# [*wwid*]
+# @param wwid
 #
-# == Authors
-#
-# * Trevor Vaughan <tvaughan@onyxpoint.com>
+# @author Trevor Vaughan <tvaughan@onyxpoint.com>
 #
 define multipathd::blacklist_wwid (
-  $wwid
+  String $wwid
 ) {
   concat_fragment { "multipath_blacklist+$name.wwid.blacklist":
     content => "wwid $wwid\n"

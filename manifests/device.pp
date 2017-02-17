@@ -1,39 +1,33 @@
-# == Define: multipathd::device
-#
 # Set up the multipath.conf defaults per the 'devices section' of
 # multipath.conf(5)
 #
-# == Parameters
-#
-# [*vendor*]
-# [*product*]
-# [*path_grouping_policy*]
-# [*getuid_callout*]
-# [*prio_callout*]
-# [*path_checker*]
-# [*path_selector*]
-# [*failback*]
-# [*rr_min_io*]
-# [*product_blacklist*]
-# [*blacklist*]
+# @param vendor
+# @param product
+# @param path_grouping_policy
+# @param getuid_callout
+# @param prio_callout
+# @param path_checker
+# @param path_selector
+# @param failback
+# @param rr_min_io
+# @param product_blacklist
+# @param blacklist
 #   Whether or not to blacklist this device instead of adding it.
 #
-# == Authors
-#
-# * Trevor Vaughan <tvaughan@onyxpoint.com>
+# @author Trevor Vaughan <tvaughan@onyxpoint.com>
 #
 define multipathd::device (
-  $vendor,
-  $product,
-  $path_grouping_policy = 'nil',
-  $getuid_callout = 'nil',
-  $prio_callout = 'nil',
-  $path_checker = 'nil',
-  $path_selector = 'nil',
-  $failback = 'nil',
-  $rr_min_io = 'nil',
-  $product_blacklist = 'nil',
-  $blacklist = false
+  String           $vendor,
+  String           $product,
+  Optional[String] $path_grouping_policy = undef,
+  Optional[String] $getuid_callout       = undef,
+  Optional[String] $prio_callout         = undef,
+  Optional[String] $path_checker         = undef,
+  Optional[String] $path_selector        = undef,
+  Optional[String] $failback             = undef,
+  Optional[String] $rr_min_io            = undef,
+  Optional[String] $product_blacklist    = undef,
+  Boolean          $blacklist            = false
 ) {
 
   if $blacklist {
@@ -70,6 +64,4 @@ define multipathd::device (
       content => template('multipathd/device.erb')
     }
   }
-
-  validate_bool($blacklist)
 }

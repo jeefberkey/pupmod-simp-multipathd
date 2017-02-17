@@ -7,11 +7,22 @@
   "source":  "https://github.com/simp/pupmod-simp-multipathd",
   "project_page": "https://github.com/simp/pupmod-simp-multipathd",
   "issues_url":   "https://simp/project.atlassian.net",
-  "tags": [ "simp", "multipathd"],
+  "tags": [
+    "simp",
+    "multipathd"
+  ],
   "dependencies": [
     {
       "name": "simp/simpcat",
       "version_requirement": ">= 4.0.0"
+    },
+    {
+      "name": "simp/simplib",
+      "version_requirement": ">= 2.1.0 < 3.0.0"
+    },
+    {
+      "name": "puppetlabs/stdlib",
+      "version_requirement": ">= 4.9.0 < 5.0.0"
     }
   ],
   "operatingsystem_support": [
@@ -27,5 +38,16 @@
         "6"
       ]
     }
-  ]
+  ],
+  "requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": "4.x"
+    },
+    {
+      "name": "pe",
+      "version_requirement": ">= 2016.2.0"
+    }
+  ],
+  "data_provider": "hiera"
 }

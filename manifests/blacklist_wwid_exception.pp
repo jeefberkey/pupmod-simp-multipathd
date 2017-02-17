@@ -1,17 +1,11 @@
-# == Define: multipathd::blacklist_wwid_exception
-#
 # Prevent the blacklisting of a wwid per the 'blacklist_exceptions section' of
 # multipath.conf(5)
 #
-# == Parameters
-#
-# [*name*]
+# @param name
 #   The wwid you wish to except from blacklisting.
-# [*wwid*]
+# @param wwid
 #
-# == Authors
-#
-# * Trevor Vaughan <tvaughan@onyxpoint.com>
+# @author Trevor Vaughan <tvaughan@onyxpoint.com>
 #
 define multipathd::blacklist_wwid_exception (
   $wwid

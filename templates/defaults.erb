@@ -10,11 +10,11 @@ defaults {
     max_fds   <%= @max_fds %>
     rr_weight <%= @rr_weight %>
     failback  <%= @failback %>
-<% if @no_path_retry != 'nil' then -%>
+<% if !@no_path_retry -%>
     no_path_retry <%= @no_path_retry %>
 <% end -%>
     user_friendly_names   <%= @user_friendly_names %>
-<% if @bindings_file != 'nil' then -%>
+<% if !@bindings_file -%>
     bindings_file "<%= @bindings_file %>"
 <% end -%>
 }
